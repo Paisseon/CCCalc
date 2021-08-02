@@ -316,7 +316,7 @@ static CCCalcViewController *ccCalcController;
 }
 
 %new -(BOOL)isCalcModule {
-	return [[MSHookIvar<SBFApplication *>(self, "_application") applicationBundleIdentifier] isEqualToString:@"com.apple.calculator"];
+	return true;
 }
 
 %end
