@@ -1,4 +1,9 @@
+@interface CCUIAppLauncherModule : NSObject
+@property (nonatomic, copy, readwrite) NSString* applicationIdentifier;
+@end
+
 @interface CCUIAppLauncherViewController : UIViewController
+@property (nonatomic, weak, readwrite) CCUIAppLauncherModule* module;
 - (UIView *)contentView;
 - (UIImage *)glyphImage;
 - (BOOL)isCalcModule;

@@ -8,7 +8,7 @@
 
 + (id)imageForCharacter:(unsigned)character {
 	if(character == BTN_MULTIPLY || character == BTN_NEGATE || character == BTN_BACK) {
-		NSBundle *bundle = [[NSBundle alloc] initWithPath:@"/Library/MobileSubstrate/DynamicLibraries/com.gilesgc.cccalc.bundle"];
+		NSBundle *bundle = [[NSBundle alloc] initWithPath:@"/Library/MobileSubstrate/DynamicLibraries/ai.paisseon.cccalc.bundle"];
 		if(character == BTN_BACK)
 			return [UIImage imageWithContentsOfFile:[bundle pathForResource:@"back" ofType:@"png"]];
 		else
@@ -315,8 +315,8 @@ static CCCalcViewController *ccCalcController;
 	%orig;
 }
 
-%new -(BOOL)isCalcModule {
-	return true;
+%new -(bool)isCalcModule {
+	return ([self.module.applicationIdentifier isEqualToString:@"com.apple.calculator"]);
 }
 
 %end
